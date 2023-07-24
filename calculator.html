@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" > 
+    <title>calculator</title>
+    <style>
+        *{
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        body{
+            background: linear-gradient(to right, rgb(1, 25, 29), rgb(252, 252, 252));
+            height: 100vh;
+            background-repeat:  no-repeat;
+            display:grid;
+            place-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            background-color: black;
+            box-shadow: 0px 0px 66px 33px rgb(255, 183, 0);
+            border-radius: 10px
+        }
+
+        .button{
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            border-style: none;
+            margin-left: 10px;
+            margin-right: 5px;
+            background-color: rgba(255, 255, 255, 0.832);
+        }
+
+        .button:hover{
+            background-color: white;
+        }
+        .operator:hover{
+            background-color: rgb(247, 255, 1);
+        }
+        #c:hover{
+            background-color: rgb(255, 166, 1);
+        }
+        
+        #equal:hover{
+            background-color: rgb(6, 255, 6);
+        }
+        #backspace:hover{
+            background-color: rgb(245, 193, 110);
+
+        }
+        .operator{
+            height: 50px;
+            width: 60px;
+            border-radius: 50%;
+            border-style: none;
+            margin-left: 10px;
+            margin-right: 5px;
+            font-weight: bolder;
+            font-size: 1rem;
+            padding: 0%;
+            background-color: rgb(255, 225, 1);
+        }
+        #equal{
+            height: 50px;
+            width: 110px;
+            border-radius: 40%;
+            border-style: none;
+            margin-left: 10px;
+            margin-right: 5px;
+            background-color: rgb(9, 210, 9);
+        }
+        #display{
+            height: 45px;
+            width: 250px;
+            padding: 5px;
+            font-size: 1.5em;
+            border: 5px solid black;
+        }
+        
+        #dot,#zero,#equal{
+            margin-bottom: 15px;
+        }
+        
+        #dot{
+            font-weight: bolder;
+        }
+        
+        #c{
+            background-color: rgb(255, 158, 1);
+        }
+        #backspace{
+            background-color: rgb(254, 211, 142);
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form name='form1' class='calci' action="calculator.html" method="POST">
+            <input type="text" name="answer" id="display" placeholder="00000000000"> 
+            <br>
+            <br>
+            <input type="button" class="button" value="C" id="c" onclick="form1.answer.value=''">
+            <input type="button" class="button" value="<" id="backspace" onclick="form1.answer.value=form1.answer.value.substring(0,form1.answer.value.length*1-1)">
+            <input type="button" class="button" value="00" onclick="form1.answer.value+='00'">
+            <input type="button" class="operator" value="/" onclick="form1.answer.value+='/'">
+            <br>
+            <br>
+            <input type="button" class="button" value="7" onclick="form1.answer.value+='7'">
+            <input type="button" class="button" value="8" onclick="form1.answer.value+='8'">
+            <input type="button" class="button" value="9" onclick="form1.answer.value+='9'">
+            <input type="button" class="operator" value="*" onclick="form1.answer.value+='*'">
+            <br>
+            <br>
+            <input type="button" class="button" value="4" onclick="form1.answer.value+='4'">
+            <input type="button" class="button" value="5" onclick="form1.answer.value+='5'">
+            <input type="button" class="button" value="6" onclick="form1.answer.value+='6'">
+            <input type="button" class="operator" value="-" onclick="form1.answer.value+='-'">
+            <br>
+            <br>
+            <input type="button" class="button" value="1" onclick="form1.answer.value+='1'">
+            <input type="button" class="button" value="2" onclick="form1.answer.value+='2'">
+            <input type="button" class="button" value="3" onclick="form1.answer.value+='3'">
+            <input type="button" class="operator" value="+" onclick="form1.answer.value+='+'">
+            <br>
+            <br>
+            <input type="button" class="button" id="zero" value="0" onclick="form1.answer.value+='0'">
+            <input type="button" class="operator" id="dot" value="." onclick="form1.answer.value+='.'">
+            <input type="button" id="equal" value="=" onclick="form1.answer.value=eval(form1.answer.value)">
+            <br>
+        </form>
+    </div>
+</body>
+</html>
